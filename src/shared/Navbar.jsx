@@ -4,8 +4,8 @@ const Navbar = () => {
     const navOptions = <>
         <div className="flex space-x-3">
             <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/'>Home</NavLink></li> 
+            <li><NavLink to='/menu'>Our Menu</NavLink></li>
+            <li><NavLink to='/ourShop/salads'>Our Shop</NavLink></li> 
         </div>
     </>
     return (
