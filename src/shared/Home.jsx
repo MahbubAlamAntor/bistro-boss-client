@@ -7,15 +7,17 @@ import Testimonials from "./Testimonials";
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <Helmet>
                 <title>Bistro Boss | Home</title>
             </Helmet>
             <Banner></Banner>
-            <Slider></Slider>
-            <OurMenu></OurMenu>
-            <Feautured></Feautured>
-            <Testimonials></Testimonials>
+            <div className="max-w-7xl mx-auto">
+                <Slider></Slider>
+                <OurMenu></OurMenu>
+                <Feautured></Feautured>
+                <Testimonials></Testimonials>
+            </div>
         </div>
     );
 };

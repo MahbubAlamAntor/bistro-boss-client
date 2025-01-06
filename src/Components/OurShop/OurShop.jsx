@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 const OurShop = () => {
     const categories = ['dessert', 'pizza', 'salads', 'soups']
     const { category } = useParams();
+    
     const initialIndex = categories.indexOf(category)
     const [tabIndex, setTabIndex] = useState(initialIndex);
     console.log(category)
@@ -22,7 +23,7 @@ const OurShop = () => {
     const soup = menu.filter(data => data.category === 'soup');
 
     return (
-        <div>
+        <div className="container mx-auto">
             <Cover title={'OUR SHOP'} description={'Would you like to try a dish?'} img={ourShopImg}></Cover>
             <div className="">
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
