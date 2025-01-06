@@ -3,10 +3,11 @@ import DynamicTitle from "../../../Components/DynamicTitle";
 import useMenu from "../../../Hooks/useMenu";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const ManageItems = () => {
-    const [menu,, refetch] = useMenu();
+    const [menu, , refetch] = useMenu();
     const axiosSecure = useAxiosSecure();
 
     const handleItemsDelete = (id) => {
@@ -78,7 +79,9 @@ const ManageItems = () => {
                                     </td>
                                     <td>{items.price}</td>
                                     <td>
-                                        <button className=""><FaEdit className="bg-orange-500  rounded-lg text-white w-16 h-9 p-2" size={25}></FaEdit></button>
+                                        <Link to={`/dashboard/update/${items._id}`}>
+                                            <button className=""><FaEdit className="bg-orange-500  rounded-lg text-white w-16 h-9 p-2" size={25}></FaEdit></button>
+                                        </Link>
                                     </td>
                                     <td>
                                         <button onClick={() => handleItemsDelete(items._id)}><FaTrashAlt className="text-red-600" size={30}></FaTrashAlt></button>
