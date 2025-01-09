@@ -79,7 +79,7 @@ const UpdateItems = () => {
                                     className="select select-bordered w-full"
 
                                 >
-                                    <option disabled selected>
+                                    <option>
                                         Select Category
                                     </option>
                                     <option value="dessert">Dessert</option>

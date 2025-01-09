@@ -14,6 +14,8 @@ import AddItems from "../shared/Pages/Dashboard/AddItems";
 import AdminRoute from "./AdminRoute";
 import ManageItems from "../shared/Pages/Dashboard/ManageItems";
 import UpdateItems from "../shared/Pages/Dashboard/UpdateItems";
+import Payment from "../shared/Pages/Dashboard/Payment";
+import PaymentHistory from "../shared/Pages/Dashboard/PaymentHistory";
 
 const router = createBrowserRouter([
     {
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
             {
                 path: 'cart',
                 element: <Cart></Cart>
+            },
+            {
+                path: 'payment',
+                element: <Payment></Payment>
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
             },
 
             // admin data
