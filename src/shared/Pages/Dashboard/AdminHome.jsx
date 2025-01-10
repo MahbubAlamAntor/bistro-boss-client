@@ -15,6 +15,16 @@ const AdminHome = () => {
         }
     });
 
+    const { data: charts = [] } = useQuery({
+        queryKey: ['order-stats'],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/order/stats');
+            return res.data
+        }
+    });
+
+    console.log(charts);
+
     return (
         <div className="p-8">
             <h2 className="text-3xl font-bold text-center mb-8">
