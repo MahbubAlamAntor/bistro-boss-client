@@ -18,34 +18,33 @@ const PaymentHistory = () => {
     return (
         <div>
             <DynamicTitle heading='PAYMENT HISTORY' subHeading={`---At a Glance!---`}></DynamicTitle>
-            <div>
-                <h2 className="text-3xl font-bold">Total Payments: {payments?.length}</h2>
-                <div>
-                    <div className="overflow-x-auto">
-                        <table className="table">
-                            {/* head */}
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Email</th>
-                                    <th>Category</th>
-                                    <th>Favorite Color</th>
+            <div >
+                <h2 className="text-3xl font-bold mb-2">Total Payments: {payments?.length}</h2>
+                <div className="overflow-hidden rounded-lg">
+                    <table className="table">
+                        <thead className="bg-orange-400 text-white rounded-lg">
+                            <tr>
+                                <th>No</th>
+                                <th>Email</th>
+                                <th>Price</th>
+                                <th>Transaction</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {payments.map((payment, index) => (
+                                <tr key={payment._id}>
+                                    <th>{index + 1}</th>
+                                    <td>{payment.email}</td>
+                                    <td>{payment.price}</td>
+                                    <td>{payment.paymentId}</td>
+                                    <td className="bg-green-500 text-white text-center">{payment.status}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                {/* row 1 */}
-                                {
-                                    payments.map((payment, index) => <tr key={payment._id}>
-                                        <th>{index + 1}</th>
-                                        <td>{payment.email}</td>
-                                        <td>{}</td>
-                                        <td>Blue</td>
-                                    </tr>)
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
+
             </div>
         </div>
     );

@@ -2,12 +2,14 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Navbar = () => {
-    const { user,signOutHandle } = useContext(AuthContext);
+    const { user, signOutHandle } = useContext(AuthContext);
     const [carts] = useCart();
-    
+    const [isAdmin] = useAdmin();
+
 
     const navOptions = (
         <>
@@ -61,16 +63,30 @@ const Navbar = () => {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink
-                        to="/secret"
-                        className={({ isActive }) =>
-                            isActive
-                                ? "text-yellow-400 border-b-2 border-yellow-400"
-                                : "hover:text-yellow-400 text-white"
-                        }
-                    >
-                        Secret
-                    </NavLink>
+                    {
+                        user && isAdmin && <NavLink
+                            to="/dashboard/adminHome"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-yellow-400 border-b-2 border-yellow-400"
+                                    : "hover:text-yellow-400 text-white"
+                            }
+                        >
+                            Secret
+                        </NavLink>
+                    }
+                    {
+                        user && !isAdmin && <NavLink
+                            to="/dashboard/userHome"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "text-yellow-400 border-b-2 border-yellow-400"
+                                    : "hover:text-yellow-400 text-white"
+                            }
+                        >
+                            Secret
+                        </NavLink>
+                    }
                 </li>
             </div>
         </>
@@ -114,7 +130,7 @@ const Navbar = () => {
                 </div>
                 {
                     user ? <>
-                    <button onClick={async () => await signOutHandle()} className="text-white hover:text-yellow-400 flex items-center space-x-1">Sign Out</button>
+                        <button onClick={async () => await signOutHandle()} className="text-white hover:text-yellow-400 flex items-center space-x-1">Sign Out</button>
                     </> : <>
                         <NavLink
                             to="/login"
