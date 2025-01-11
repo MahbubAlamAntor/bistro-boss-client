@@ -19,7 +19,7 @@ const Navbar = () => {
                         to="/"
                         className={({ isActive }) =>
                             isActive
-                                ? "text-yellow-400 border-b-2 border-yellow-400"
+                                ? "!text-yellow-400 border-b-2 border-yellow-400 "
                                 : "hover:text-yellow-400 text-white"
                         }
                     >
@@ -31,7 +31,7 @@ const Navbar = () => {
                         to="/menu"
                         className={({ isActive }) =>
                             isActive
-                                ? "text-yellow-400 border-b-2 border-yellow-400"
+                                ? "!text-yellow-400 border-b-2 border-yellow-400"
                                 : "hover:text-yellow-400 text-white"
                         }
                     >

@@ -89,7 +89,7 @@ const router = createBrowserRouter([
             {
                 path: 'update/:id',
                 element: <AdminRoute><UpdateItems></UpdateItems> </AdminRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/menu/${params.id}`)
+                loader: ({ params }) => fetch(`https://bistro-boss-server-henna-rho.vercel.app/menu/${params.id}`)
             },
             {
                 path: 'allUser',
